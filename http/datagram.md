@@ -10,19 +10,20 @@
 
 请求报文的格式：
 
-<method> <request-URL> <version>
-<headers>
+    &lt;method&gt; &lt;request-URL&gt; &lt;version&gt;
+    &lt;headers&gt;
 
-<entity-body>
+    &lt;entity-body&gt;
 
 响应报文的格式：
-<version> <status> <reason-phrase>
-<headers>
 
-<entity-body>
+    &lt;version&gt; &lt;status&gt; &lt;reason-phrase&gt;
+    &lt;headers&gt;
+
+    &lt;entity-body&gt;
 
 其中：
-<version>的格式为：HTTP/<major>.<minor>
+&lt;version&gt;的格式为：HTTP/&lt;major&gt;.&lt;minor&gt;
 
 ### 起始行
 
