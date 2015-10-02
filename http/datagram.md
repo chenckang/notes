@@ -23,7 +23,7 @@
     <entity-body>
 
 其中：
-**<version>**的格式为：**HTTP/<major>.<minor>**
+`<version>`的格式为：`HTTP/<major>.<minor>`
 
 ### 起始行
 
