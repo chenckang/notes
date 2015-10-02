@@ -42,7 +42,12 @@ URL全称统一资源定位符，且几乎所有的URI都是URL。URL提供定�
 ** 如果**query**为空，则继承基础URL中的**query**，并返回最终的URL
 
 例如：我们尝试解析下**?a=1**相对URL，基础URL为**http://host:8080/c?d=1**
-首先，
+首先，**scheme**为空，则继承**scheme**，得到第一个组件：**http**
+其次，**host**、**port**为空，则继承**host**及**port**, 得到**http://host:8080**
+然后，**path**为空，继承**path**, 得到**http://host:8080/c**
+最后，**query**不为空，则将**query**和目前抽取到的基础URL进行组合，得到**http://host:8080/c?a=1**，解析结束
+
+
 
 ## URN
 
