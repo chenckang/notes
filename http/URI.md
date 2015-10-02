@@ -31,21 +31,21 @@ URL全称统一资源定位符，且几乎所有的URI都是URL。URL提供定�
 * 相对URL的**scheme**为空，则采纳基础URL的**scheme**，同时检查**user**、**password**、**host**、**port**组件
 * 上一条中，如果所有的组件都为空，则继承基础URL中的这些组件，并检查**path**组件，否则解析结束，返回最终URL。
 * 继续检查**path**组件，
-** 如果相对URL中的**path**是绝对路径（即以“/”开头），则**path**部分绝对处理。解析结束，返回最终URL
-** 如果相对URL中的**path**是相对路径（以“./”或其他字符开头），则相对于当前的基础URL的**path**部分做处理，解析结束返回最终的URL。
-** 如果**path**为空，则继承基础URL中的**path**，继续处理**param**
+    * 如果相对URL中的**path**是绝对路径（即以“/”开头），则**path**部分绝对处理。解析结束，返回最终URL
+    * 如果相对URL中的**path**是相对路径（以“./”或其他字符开头），则相对于当前的基础URL的**path**部分做处理，解析结束返回最终的URL。
+    * 如果**path**为空，则继承基础URL中的**path**，继续处理**param**
 * 继续处理**param**组件，
-** 如果**param**非空，解析结束返回最终的URL
-** 如果**param**为空，则继承基础URL中的**param**，并继续解析**query**
+    * 如果**param**非空，解析结束返回最终的URL
+    * 如果**param**为空，则继承基础URL中的**param**，并继续解析**query**
 * 继续解析**query**，
-** 如果**query**非空，解析结束返回最终的URL
-** 如果**query**为空，则继承基础URL中的**query**，并返回最终的URL
+    * 如果**query**非空，解析结束返回最终的URL
+    * 如果**query**为空，则继承基础URL中的**query**，并返回最终的URL
 
 例如：我们尝试解析下**?a=1**相对URL，基础URL为**http://host:8080/c?d=1**
-首先，**scheme**为空，则继承**scheme**，得到第一个组件：**http**
-其次，**host**、**port**为空，则继承**host**及**port**, 得到**http://host:8080**
-然后，**path**为空，继承**path**, 得到**http://host:8080/c**
-最后，**query**不为空，则将**query**和目前抽取到的基础URL进行组合，得到**http://host:8080/c?a=1**，解析结束
+*首先，**scheme**为空，则继承**scheme**，得到第一个组件：**http**
+*其次，**host**、**port**为空，则继承**host**及**port**, 得到**http://host:8080**
+*然后，**path**为空，继承**path**, 得到**http://host:8080/c**
+*最后，**query**不为空，则将**query**和目前抽取到的基础URL进行组合，得到**http://host:8080/c?a=1**，解析结束
 
 
 
